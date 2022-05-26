@@ -1,0 +1,42 @@
+<div class="w100 palefDefault">
+    <div class="row">
+        <h3>Empresas</h3> <br> 
+    </div>
+
+
+    <div class="row mato10">
+        <button class="btn btn-success" [routerLink]="['/home/new_company']">Nuevo</button>
+    </div>
+    
+
+
+    <div class="row mato10">
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Dominio</th>
+                  <th>Cantidad de proyectos</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let company of companies">
+                  <td>{{company.short_name}}</td>
+                  <td>{{company.domain}}</td>
+                  <td> - </td>
+                  <td>
+                    <span class="badge badge-success" *ngIf="company.status == 1">Activo</span>
+                    <span class="badge badge-danger" *ngIf="company.status == 0">Inactivo</span>
+                  </td>
+                  <td><a [routerLink]="['/home/edit_company',company._id]" class="btn btn-sm btn-primary">Editar</a></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,40 @@
+
+<div class="w100 palefDefault">
+    <div class="row">
+        <h3>Clientes</h3> <br> 
+    </div>
+
+
+    <div class="row mato10">
+        <button class="btn btn-success" [routerLink]="['/home/new_client']">Nuevo</button>
+    </div>
+    
+
+
+    <div class="row mato10">
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Apellidos</th>
+                  <th>Empresa</th>
+                  <th>Correo</th>
+                  <th>Accion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let client of clients">
+                  <td>{{client.name}}</td>
+                  <td>{{client.lastname}}</td>
+                  <td> {{client.company_name}} </td>
+                  <td> {{client.mail}} </td>
+                  <td><a [routerLink]="['/home/edit_client',client._id]" class="btn btn-sm btn-primary">Editar</a></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
